@@ -1,0 +1,219 @@
+/* Custom Styles */
+.btn-primary {
+    @apply bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors;
+}
+
+.btn-secondary {
+    @apply bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors;
+}
+
+.btn-login {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+}
+
+/* Navigation Styles */
+.nav-link {
+    @apply text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+    @apply w-full;
+}
+
+.mobile-nav-link {
+    @apply text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300;
+}
+
+.mobile-menu-button {
+    @apply text-gray-700 hover:text-green-600 focus:outline-none;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.slide-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.slide-content p {
+    font-size: 1.25rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #16a34a;
+}
+
+/* Info Card Styles */
+.info-card {
+    @apply p-6 rounded-xl bg-white shadow-lg text-center transition-transform duration-300 hover:scale-105;
+    border: 1px solid #e5e7eb;
+}
+
+.info-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Solution Card Styles */
+.solution-card {
+    @apply p-8 rounded-xl bg-white shadow-lg transition-transform duration-300 hover:scale-105;
+    border: 1px solid #e5e7eb;
+}
+
+.solution-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.solution-card ul li {
+    @apply text-gray-700 hover:text-green-600 transition-colors duration-300;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+footer a {
+    @apply transition-colors duration-300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+
+    .info-card, .solution-card {
+        @apply p-4;
+    }
+}
+
+/* Event Card Styles */
+.event-card {
+    @apply block transition-all duration-500;
+}
+
+.event-card:hover {
+    @apply shadow-2xl;
+    transform: translateY(-10px);
+}
+
+.event-card img {
+    @apply transition-transform duration-700;
+}
+
+.event-card:hover img {
+    @apply scale-110;
+}
+
+/* Add text shadow for better readability */
+.event-card h3,
+.event-card p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Change text color for better visibility */
+.event-card h3 {
+    color: #16a34a; /* Green */
+    opacity: 1.0;
+}
+
+.event-card p {
+    color: #16a34a; /* Green */
+    opacity: 1.0;
+}
+
+.event-card .group-hover\:translate-y-\[-10px\] {
+    transition: transform 0.5s ease;
+}
+
+.event-card .group-hover\:translate-x-2 {
+    transition: transform 0.5s ease;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.mobile-menu.hidden {
+    @apply opacity-0 transform -translate-y-4;
+}
+
+.mobile-menu:not(.hidden) {
+    @apply opacity-100 transform translate-y-0;
+} 

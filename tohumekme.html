@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tohum Ekleme Oyunu - İklim Habitat</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add any specific styles for this page here if needed */
+        .step-section {
+            display: none;
+        }
+        .step-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-green-50 to-blue-50 min-h-screen">
+    <!-- Navigation Menu -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-green-600 hover:text-green-700 transition-colors">İklim Habitat</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="nav-link">Ana Sayfa</a>
+                        <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+                        <a href="#hakkimizda" class="nav-link">Hakkımızda</a>
+                        <a href="#iletisim" class="nav-link">İletişim</a>
+                        <a href="profil.html" class="nav-link">Profil</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+                <a href="etkinlikler.html" class="mobile-nav-link">Etkinlikler</a>
+                <a href="#hakkimizda" class="mobile-nav-link">Hakkımızda</a>
+                <a href="#iletisim" class="mobile-nav-link">İletişim</a>
+                <a href="profil.html" class="mobile-nav-link">Profil</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+            <h1 class="text-4xl font-bold text-center text-green-800 mb-8">Tohum Ekleme Oyunu</h1>
+
+            <!-- Step 1: Tohum Hazırlama -->
+            <div id="step1" class="step-section active">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Adım 1: Tohum Nasıl Hazırlanır?</h2>
+                <div class="video-container mb-6 aspect-w-16 aspect-h-9">
+                    <!-- Replace with your video embed code -->
+                    <iframe src="https://www.youtube.com/embed/your-seed-prep-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                </div>
+                <div class="mb-6">
+                    <label for="seed-photo" class="block text-lg font-medium text-gray-700 mb-2">Tohumların Hazırlanmış Halinin Fotoğrafını Yükle:</label>
+                    <input type="file" id="seed-photo" accept="image/*" class="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-green-50 file:text-green-700
+                        hover:file:bg-green-100"/>
+                </div>
+                <button onclick="nextStep()" class="btn-primary w-full">İleri</button>
+            </div>
+
+            <!-- Step 2: Toprak Hazırlama (Hidden initially) -->
+            <div id="step2" class="step-section">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Adım 2: Toprak Nasıl Hazırlanır?</h2>
+                <div class="video-container mb-6 aspect-w-16 aspect-h-9">
+                    <!-- Replace with your video embed code -->
+                    <iframe src="https://www.youtube.com/embed/your-soil-prep-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                </div>
+                <div class="mb-6">
+                    <label for="soil-photo" class="block text-lg font-medium text-gray-700 mb-2">Toprağın Hazırlanmış Halinin Fotoğrafını Yükle:</label>
+                    <input type="file" id="soil-photo" accept="image/*" class="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-green-50 file:text-green-700
+                        hover:file:bg-green-100"/>
+                </div>
+                <button onclick="nextStep()" class="btn-primary w-full">İleri</button>
+            </div>
+
+            <!-- Step 3: Tohum Ekleme (Hidden initially) -->
+            <div id="step3" class="step-section">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Adım 3: Tohum Nasıl Ekilir?</h2>
+                <div class="video-container mb-6 aspect-w-16 aspect-h-9">
+                    <!-- Replace with your video embed code -->
+                    <iframe src="https://www.youtube.com/embed/your-seed-planting-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                </div>
+                <div class="mb-6">
+                    <label for="planted-photo" class="block text-lg font-medium text-gray-700 mb-2">Ekilmiş Halinin Fotoğrafını Yükle:</label>
+                    <input type="file" id="planted-photo" accept="image/*" class="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-green-50 file:text-green-700
+                        hover:file:bg-green-100"/>
+                </div>
+                <button onclick="finishGame()" class="btn-primary w-full">Bitir</button>
+            </div>
+
+            <!-- Completion Section (Hidden initially) -->
+            <div id="completion" class="step-section text-center">
+                <h2 class="text-3xl font-bold text-green-700 mb-4">Tebrikler! Oyunu Tamamladınız!</h2>
+                <p class="text-xl text-gray-700 mb-4">Çevre için harika bir adım attınız.</p>
+                <div id="discount-code" class="text-2xl font-semibold text-blue-600 mb-4"></div>
+                <div id="company-name" class="text-lg text-gray-600 mb-6"></div>
+                <button onclick="window.location.href='etkinlikler.html'" class="btn-secondary">Diğer Etkinliklere Göz At</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        const steps = ['step1', 'step2', 'step3', 'completion'];
+        let currentStep = 0;
+
+        function showStep(stepIndex) {
+            steps.forEach((stepId, index) => {
+                const stepElement = document.getElementById(stepId);
+                if (index === stepIndex) {
+                    stepElement.classList.add('active');
+                    stepElement.classList.remove('hidden');
+                } else {
+                    stepElement.classList.remove('active');
+                    stepElement.classList.add('hidden');
+                }
+            });
+        }
+
+        function nextStep() {
+            // In a real application, you would validate the photo upload here
+            currentStep++;
+            if (currentStep < steps.length) {
+                showStep(currentStep);
+            }
+        }
+
+        function finishGame() {
+            // In a real application, you would finalize the game and handle data submission
+
+            // Simulate generating a random discount code and company
+            const discountCode = 'IKLIM' + Math.random().toString(36).substr(2, 6).toUpperCase();
+            const companies = ['Doğa Market', 'Yeşil Dünya Mağazası', 'Eko Ürünler'];
+            const randomCompany = companies[Math.floor(Math.random() * companies.length)];
+
+            document.getElementById('discount-code').innerText = 'İndirim Kodunuz: ' + discountCode;
+            document.getElementById('company-name').innerText = randomCompany + ' firmasında geçerlidir.';
+
+            currentStep++;
+            showStep(currentStep);
+        }
+
+        // Initialize the first step
+        showStep(currentStep);
+
+        // Mobile menu toggle (copying from index.html)
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+    </script>
+</body>
+</html> 

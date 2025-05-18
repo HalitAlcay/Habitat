@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - İklim Habitat</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-b from-green-50 to-blue-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full mx-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+            <div class="text-center mb-8">
+                <a href="index.html" class="text-3xl font-bold text-green-600">İklim Habitat</a>
+                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Giriş Yap</h2>
+            </div>
+            
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">E-posta</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Şifre</label>
+                    <input type="password" id="password" name="password" required
+                        class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors">
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" name="remember"
+                            class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">Beni hatırla</label>
+                    </div>
+                    <a href="#" class="text-sm text-green-600 hover:text-green-500">Şifremi unuttum</a>
+                </div>
+                
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105">
+                    Giriş Yap
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                    Hesabınız yok mu?
+                    <a href="register.html" class="text-green-600 hover:text-green-500 font-semibold">Kayıt Ol</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Burada normalde bir API'ye istek atılır
+            // Şimdilik basit bir kontrol yapalım
+            if (email && password) {
+                // Başarılı giriş
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html> 
